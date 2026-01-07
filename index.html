@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIIII BESTIE 💕</title>
+
+  <!-- ✅ LINK TO EXTERNAL CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🌈 EMOJI BACKGROUND SCRIPT -->
+<script>
+const bgEmojis = ["💖","💕","🥰","😍","🌸","✨","💃","🦄","🎀","😭","😌","🤍"];
+for (let i = 0; i < 60; i++) {
+  let e = document.createElement("div");
+  e.className = "emoji-bg";
+  e.innerText = bgEmojis[Math.floor(Math.random() * bgEmojis.length)];
+  e.style.left = Math.random() * 100 + "%";
+  e.style.animationDuration = 5 + Math.random() * 6 + "s";
+  e.style.animationDelay = Math.random() * 5 + "s";
+  document.body.appendChild(e);
+}
+</script>
+
+<div class="container">
+  <div class="card">
+
+    <div class="hi">HIIII sannnn🥹💖</div>
+
+    <div id="typing"></div>
+
+    <button onclick="showMemories()">CLICK ME kutarr💕</button>
+
+    <div id="memories" class="hidden">
+      <p style="margin-top:16px;">
+        You are literally my comfort person 😭💗
+      </p>
+
+      <div class="photos">
+        <img src="my pic.png" alt="memory 1">
+        <img src="pic1.png" alt="memory 2">
+        <img src="pic2.png" alt="memory 3">
+        <img src="pic3.png" alt="memory 4">
+        <img src="pic4.png" alt="memory 5">
+        <img src="pic5.png" alt="memory 6">
+      </div>
+
+      <p style="margin-top:14px;">
+        Forever my fav human 🦄✨
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ✍️ TYPING EFFECT */
+const lines = [
+  "Okay listen!!!!!!",
+  "This is not a normal hiiii 😭✨",
+  "i was trying something neww 💕",
+  "so u this is not normal hii this is the most special hii ever 🦄💖",
+  "And yes… this page is for YOU kutarrrr 😌✨"
+];
+
+let l = 0, c = 0;
+const t = document.getElementById("typing");
+
+function type() {
+  if (l < lines.length) {
+    if (c < lines[l].length) {
+      t.innerHTML += lines[l][c++];
+      setTimeout(type, 40);
+    } else {
+      t.innerHTML += "<br><br>";
+      l++; c = 0;
+      setTimeout(type, 500);
+    }
+  }
+}
+type();
+
+/* 💥 BUTTON ACTION */
+function showMemories() {
+  document.getElementById("memories").classList.remove("hidden");
+
+  const pops = ["💖","😍","🥰","✨","🎀","💃","🦄","😭"];
+  for (let i = 0; i < 30; i++) {
+    let p = document.createElement("span");
+    p.className = "pop";
+    p.innerText = pops[Math.floor(Math.random() * pops.length)];
+    p.style.left = Math.random() * innerWidth + "px";
+    p.style.top = innerHeight + "px";
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 2000);
+  }
+}
+</script>
+
+</body>
+</html>
